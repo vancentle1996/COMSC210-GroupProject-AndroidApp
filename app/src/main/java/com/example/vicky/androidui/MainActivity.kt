@@ -1,5 +1,6 @@
 package com.example.vicky.androidui
 
+import android.content.Intent
 import android.os.AsyncTask
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
@@ -27,7 +28,10 @@ class MainActivity : AppCompatActivity() {
 
         login.setOnClickListener {
             if (username.text.toString().isNotEmpty() && password.text.toString().isNotEmpty())
-                makePostRequst(this, username.text.toString(), password.text.toString()).execute()
+         makePostRequst(this, username.text.toString(), password.text.toString()).execute()
+
+            val intent = Intent(  this, DashboardActivity::class.java )
+            startActivity(intent)
         }
     }
 
